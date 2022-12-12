@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SprintTR</title>
+    <style>
+       table, th, td {
+           border: 1px solid black;
+           }
+        table.center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coffee Machine page</h1>
+    <p>here you can add and remove coffee to menu</p>
+
+    <table class="center">
+        <thead><tr><th>add/remove coffee</th><th>Menu</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>input fields </td>
+                <td>
+                    {%for m in pageMenu%}
+                    {{m}}
+                    <br>
+                    {%endfor%}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

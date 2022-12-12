@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SprintTR</title>
+    <style>
+       table, th, td {
+           border: 1px solid black;
+           }
+        table.center {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="../static/css/bootstrap1.min.css" rel="stylesheet" media="screen">-->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <!-- <script src="../static/js/jquery.js"></script> -->
+    <script src="../static/js/bootstrap1.min.js"></script> 
+</head>
+
+<body>
+    
+    <div class="jumbotron">
+        <div class="container">
+          <h1>Coffee Corner page</h1>
+          <p class="lead">Register, Order Coffee, and have a chat</p>
+          <a class="btn btn-primary btn-lg btn-block">Big ASS Learn more button</a>
+        </div>
+      </div>
+    
+    <br>  
+
+    <table class="center">
+        <thead>
+            <tr>
+                <th>register</th>
+                <th>Menu</th>
+                <th>Conversations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="container">
+                        <div class="row">
+                            {%for m in pageOrd%}
+                            <div class="col align-self-start">
+                                <div class="card text-bg-danger mb-3" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{m}}</h5> <br>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                    <p style="align-self: center; background-color: darkgray">
+                    <h2 style="align-self: center">Register and order</h2>
+                    <form action="{{ '/AddOrder' }}" method="post" style="text-align: center">
+                        <label>Name :</label>
+                        <input type="text" id="fname" name="fname" value=""><br>
+                        <label>Coffee Number/Name:</label>
+                        <input type="text" id="coffee" name="coffee" value="">
+                        <input type="submit" value="Add me">
+                    </form>
+                    </p>
+
+                </td>
+                <td>
+                    <div class="container">
+                        <div class="row">
+                            {%for m in pageMenu%}
+                            <div class="col-md-4">
+                                <div class="card text-bg-dark mb-3" style="width: 12rem;">
+                                    <img src="../static/images/coffee-bean-icon-9.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{m}}</h5>
+                                        <!-- <p class="card-text">{{m}}</p> 
+                                        <a href="#" class="btn btn-primary">Select</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+
+
+                    <p style="align-self: center; background-color: darkgray">
+                    <h2 style="align-self: center">Add coffee</h2>
+                    <form action="{{ '/AddCoffee' }}" method="post" style="text-align: center">
+                        <label>Coffee name:</label>
+                        <input type="text" id="Cname" name="Cname" value=""><br>
+                        <input type="submit" value="Add Coffee"><br><br>
+                    </form>
+                    <form action="{{ '/EmptyMenu' }}" method="post" style="text-align: center">
+                        <label>Reset Menu: </label>
+                        <input type="submit" value="Empty Menu"><br><br>
+                    </form>
+                    </p>
+                </td>
+                <td>
+                    <div class="container">
+                        <div class="row">
+                            {%for m in pageCon%}
+                            <div class="col align-self-start">
+                                <div class="card text-bg-success mb-3" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{m}}</h5><br>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+
+                    <p style="align-self: center; background-color: darkgray">
+                    <h2 style="align-self: center">Conversations:</h2>
+                    <form action="{{ '/AddComment' }}" method="post" style="text-align: center">
+                        <label>Your name:</label>
+                        <input type="text" id="fname" name="fname" value=""><br>
+                        <label>Your comment:</label>
+                        <input type="text" id="comment" name="comment" value=""><br>
+                        <input type="submit" value="Add Comment">
+                    </form>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

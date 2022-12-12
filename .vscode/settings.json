@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/3e4e9143-bf02-4f15-afd3-43480a0b89c1/AppServices/subscriptions/3e4e9143-bf02-4f15-afd3-43480a0b89c1/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/KeaCoffeeCorner",
+    "appService.deploySubpath": "."
+}
